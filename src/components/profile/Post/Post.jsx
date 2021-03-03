@@ -8,6 +8,7 @@ function Post(props) {
             
             <img className={style.img} src={img} alt="" />
             {props.message}
+            {props.likesCount}
 
         </div>
 

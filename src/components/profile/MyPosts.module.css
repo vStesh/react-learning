@@ -1,4 +1,14 @@
 .title {
     font-size: 20px;
+    padding-bottom: 5px;
 
+}
+.myPosts {
+    padding: 10px;
+}
+.posts {
+    padding: 10px;
+}
+.addPost {
+    margin-bottom: 10px;
 }

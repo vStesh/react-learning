@@ -1,0 +1,19 @@
+.content {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogs, .messages {
+    padding: 10px;
+}
+.item {
+    padding: 5px 0;
+}
+.itemActive {
+    color: red;
+}
+.messages {
+    border-left: 1px solid #a0a0a0;
+}
+.message {
+    padding: 10px;
+}
