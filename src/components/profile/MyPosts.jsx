@@ -11,8 +11,9 @@ function MyPosts(props) {
         props.addPost();
     };
     let onPostChange = () => {
+
         let text = newPostElement.current.value;
-        props.updateNepPostText(text);
+        props.updateNewPostText(text);
     }
     return (
         <div className={style.posts}>

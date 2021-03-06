@@ -11,7 +11,7 @@ function Profile(props) {
             <MyPosts
                 profilePage={props.state}
                 addPost={props.addPost}
-                updateNepPostText={props.updateNewPostText}
+                updateNewPostText={props.updateNewPostText}
             />
         </div>
     );
