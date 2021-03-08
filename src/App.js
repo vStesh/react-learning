@@ -4,10 +4,10 @@ import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
-import Dialogs from "./components/dialogs/Dialogs";
 import {BrowserRouter, Route} from 'react-router-dom';
 import Settings from "./components/settings/Settings";
 import News from "./components/news/News";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
 
 
 function App(props) {
@@ -21,13 +21,14 @@ function App(props) {
 
                   <Route path='/profile'
                          render={ () => <Profile
-                             state={props.state.profilePage}
-                             addPost={props.addPost}
-                             updateNewPostText={props.updateNewPostText}
-                         /> }/>
+                                             state={props.state.profilePage}
+                                             dispatch={props.dispatch}
+                                             store={props.store}
+                                         /> }/>
                   <Route path='/messages'
-                         render={ () => <Dialogs
-                             state={props.state.messagePage}/> }/>
+                         render={ () => <DialogsContainer
+                                            store={props.store}
+                                        /> }/>
                   <Route path='/news'
                          render={ () => <News /> }/>
                   <Route path='/settings'
