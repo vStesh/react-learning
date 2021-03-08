@@ -11,7 +11,7 @@ function Profile(props) {
             <MyPostsContainer
                 // profilePage={props.state}
                 // dispatch={props.dispatch}
-                store={props.store}
+                //store={props.store}
             />
         </div>
     );
