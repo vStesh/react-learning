@@ -1,0 +1,12 @@
+.paginate {
+    padding: 10px 0;
+}
+.paginate span {
+    margin-left: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    cursor: pointer;
+}
+.selected {
+    background: blue;
+}

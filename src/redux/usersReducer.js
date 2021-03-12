@@ -1,20 +1,19 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
 
 let initState = {
-    users : [
-        {id: 1, followed: false, fullName: "Kate", status: 'Class', location: {country: 'Belarus', city: 'Minsk'}},
-        {id: 2, followed: false, fullName: "Den", status: 'I am fine', location: {country: 'Ukraine', city: 'Kiev'}},
-        {id: 3, followed: true, fullName: "John", status: 'Crazy', location: {country: 'Russia', city: 'Moscow'}},
-        {id: 4, followed: true, fullName: "Lol", status: 'Looking for me', location: {country: 'USA', city: 'LA'}},
-
-    ],
-    newPostText: 'fdfd',
+    users : [ ],
+    pageSize: 50,
+    totalUsersCount: 0,
+    currentPage: 3,
+    // newPostText: 'fdfd',
 }
 
-const usersReducer = (state = initState, action) => {
+const usersReducer = (state = initState , action) => {
 
     switch (action.type) {
         case FOLLOW:
@@ -38,7 +37,11 @@ const usersReducer = (state = initState, action) => {
                 })
             };
         case SET_USERS:
-            return { ...state, users: [ ...state, action.users ] };
+            return { ...state, users: [ ...action.users ] };
+        case SET_CURRENT_PAGE:
+            return { ...state, currentPage: action.currentPage };
+        case SET_TOTAL_USERS_COUNT:
+            return { ...state, totalUsersCount: action.count };
         default:
             return state;
     }
@@ -47,6 +50,8 @@ const usersReducer = (state = initState, action) => {
 export const followAC = (userId) => ({type: FOLLOW, userId});
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId});
 export const setUsersAC = (users) => ({type: SET_USERS, users});
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setUsersTotalCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
 
 
 export default usersReducer;
