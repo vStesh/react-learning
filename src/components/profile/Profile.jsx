@@ -6,13 +6,9 @@ import MyPostsContainer from "./MyPostsContainer";
 function Profile(props) {
     return (
         <div className="content">
-            <ProfileInfo />
+            <ProfileInfo profile={props.profile}/>
             <div className={style.avatar}>Avatar +</div>
-            <MyPostsContainer
-                // profilePage={props.state}
-                // dispatch={props.dispatch}
-                //store={props.store}
-            />
+            <MyPostsContainer />
         </div>
     );
 }
