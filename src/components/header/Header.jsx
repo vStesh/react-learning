@@ -7,7 +7,6 @@ function Header(props) {
     return (
         <header className={style.header}>
             <img src={logo} />
-
             <div className={style.loginBlock}>
                 { props.isAuth ? props.login
                     : <NavLink to={'/login'}>Login</NavLink> }
