@@ -10,36 +10,43 @@ import DialogsContainer from "./components/dialogs/DialogsContainer";
 import UsersContainer from "./components/users/UsersContainer";
 import HeaderContainer from "./components/header/HeaderContainer";
 import Login from "./components/Login/Login";
+import LoginContainer from "./components/Login/LoginContainer";
 
 
-function App(props) {
+class App extends React.Component {
+    componentDidMount() {
 
-  return (
+    }
 
-          <div className="app-wrapper">
-              <HeaderContainer />
-              <Navbar />
-              <div className="app-content">
+    render() {
 
-                  <Route path='/profile/:userId?'
-                         render={ () => <ProfileContainer /> }/>
-                  <Route path='/messages'
-                         render={ () => <DialogsContainer /> }/>
-                  <Route path='/news'
-                         render={ () => <News /> }/>
-                  <Route path='/settings'
-                         render={ () => <Settings /> }/>
-                  <Route path='/users'
-                         render={ () => <UsersContainer /> }/>
-                  <Route path='/login'
-                         render={ () => <Login /> }/>
+        return (
 
-              </div>
-              <Footer />
+            <div className="app-wrapper">
+                <HeaderContainer/>
+                <Navbar/>
+                <div className="app-content">
 
-          </div>
+                    <Route path='/profile/:userId?'
+                           render={() => <ProfileContainer/>}/>
+                    <Route path='/messages'
+                           render={() => <DialogsContainer/>}/>
+                    <Route path='/news'
+                           render={() => <News/>}/>
+                    <Route path='/settings'
+                           render={() => <Settings/>}/>
+                    <Route path='/users'
+                           render={() => <UsersContainer/>}/>
+                    <Route path='/login'
+                           render={() => <LoginContainer/>}/>
 
-  );
+                </div>
+                <Footer/>
+
+            </div>
+
+        );
+    }
 }
 
 export default App;
